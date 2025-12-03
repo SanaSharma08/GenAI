@@ -1,2 +1,2 @@
 # GenAI 
-Fullstach Agentic & Generative AI with Python
+Fullstack Agentic & Generative AI with Python
