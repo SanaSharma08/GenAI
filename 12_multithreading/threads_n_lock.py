@@ -1,0 +1,28 @@
+# THREADS & LOCK IN DEPTH
+
+import threading
+import time
+
+def boil_milk():
+    print(f"Boiling Milk...")
+    time.sleep(2)
+    print(f"Milk Boiled...")
+    
+def toast_bun(): # executes later since sleep time is greater.
+    print(f"Toasting Bun..")
+    time.sleep(3)
+    print(f"Done with bun toast...")
+    
+start=time.time()
+
+t1=threading.Thread(target=boil_milk)
+t2=threading.Thread(target=toast_bun)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+end=time.time()
+print(f"Threads execution complete in {end-start:.2f} seconds...")
